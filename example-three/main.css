@@ -1,0 +1,123 @@
+body {
+	margin: 0;
+	background-color: #000;
+	color: #fff;
+	font-family: Monospace;
+	font-size: 13px;
+	line-height: 24px;
+}
+
+a {
+	color: #ff0;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+button {
+	cursor: pointer;
+	text-transform: uppercase;
+}
+
+canvas {
+	display: block;
+}
+
+#info {
+	position: absolute;
+	top: 0px;
+	width: 100%;
+	padding: 10px;
+	box-sizing: border-box;
+	text-align: center;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	pointer-events: none;
+	z-index: 1; /* TODO Solve this in HTML */
+}
+
+#piechart0 {
+	width: 64px;
+	height: 64px;
+	position: absolute;
+	/*left: 5px;*/
+	/*top: 5px;*/
+}
+
+#piechart1 {
+	width: 64px;
+	height: 64px;
+	position: absolute;
+	/*left: 5px;*/
+	/*top: 75px;*/
+}
+
+#piechart0 > .piechart > .dial {
+	/*stroke: transparent;*/
+	stroke-width: 20;
+	/*transform: scale(1.1,1.1) translate3d(-5.0px, -5.0px, 0);*/
+	fill: rgba(255, 255, 255, 1.0);
+}
+
+#piechart0 > .piechart > .group > .value {
+	stroke: #FF6DAF;
+	stroke-width: 20;
+}
+
+#piechart0 > .piechart > .group > .value0 {
+	stroke: #26ff1a;
+	stroke-width: 20;
+}
+
+#piechart0 > .piechart > .group > .value1 {
+	stroke: #fff61c;
+	stroke-width: 20;
+}
+
+#piechart0 > .piechart > .group > .value2 {
+	stroke: #ff070a;
+	stroke-width: 20;
+}
+
+
+#piechart0 > .piechart > .value-text {
+	fill: rgb(0, 0, 0);
+	/*font-family: sans, 'sans-serif';*/
+	/*font-weight: bold;*/
+	/*font-size: 1.0em;*/
+}
+
+#piechart1 > .piechart > .dial {
+	/*stroke: transparent;*/
+	stroke-width: 20;
+	/*transform: scale(1.1,1.1) translate3d(-5.0px, -5.0px, 0);*/
+	fill: rgba(255, 255, 255, 1.0);
+}
+
+#piechart1 > .piechart > .value {
+	stroke: #AF6DFF;
+	stroke-width: 20;
+}
+
+#piechart1 > .piechart > .value-text {
+	fill: rgb(0, 0, 0);
+	/*font-family: sans, 'sans-serif';*/
+	/*font-weight: bold;*/
+	/*font-size: 1.0em;*/
+}
+
+a, button, input, select {
+	pointer-events: auto;
+}
+
+.dg.ac {
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	z-index: 2 !important; /* TODO Solve this in HTML */
+}

@@ -36,7 +36,7 @@ gulp.task("build", function() {
    // gulp.start("jshint");
 
    // return eventStream.merge(
-    return gulp.src(["src/gauge.js"]/*, {debug: true}*/)
+    return gulp.src(["src/*.js"]/*, {debug: true}*/)
         .pipe(concat("gauge.js"))
         .pipe(gulp.dest(config.dist.dir))
         .pipe(concat("gauge.min.js"))
