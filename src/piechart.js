@@ -78,6 +78,7 @@
             dialRadius: 40,
             dialStartAngle: 135,
             dialEndAngle: 45,
+            dialValueGap: 0,
             value: 0,
             max: 100,
             min: 0,
@@ -199,6 +200,7 @@
                 displayValue = opts.showValue,
                 startAngle = opts.dialStartAngle,
                 endAngle = opts.dialEndAngle,
+                valueGap = opts.dialValueGap,
                 valueDialClass = opts.valueDialClass,
                 valueTextClass = opts.valueClass,
                 valueLabelClass = opts.valueLabelClass,
@@ -302,9 +304,16 @@
 
                 var ratios = new Array(values.length);
                 var angles = new Array(values.length);
+                var angleSum = 0;
                 for (var i = 0; i < values.length; i++) {
                     ratios[i] = (values[i] / sum);
                     angles[i] = angleRange * ratios[i];
+
+                    if (i + 1 < values.length) {
+                        angleSum += angles[i];
+                    } else {
+                        angles[i] = angleRange - angleSum;
+                    }
                 }
 
                 // console.log(ratios);
@@ -322,7 +331,7 @@
 
 
                 var a0 = startAngle;
-                var aGap = 5.0;
+                var aGap = valueGap;
 
                 for (var i = 0; i < values.length; i++) {
                     if (values[i] > 0) {
