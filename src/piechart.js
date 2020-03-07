@@ -79,6 +79,8 @@
             dialStartAngle: 135,
             dialEndAngle: 45,
             dialValueGap: 0,
+            labelX: 50,
+            labelY: 50,
             value: 0,
             max: 100,
             min: 0,
@@ -204,6 +206,8 @@
                 valueDialClass = opts.valueDialClass,
                 valueTextClass = opts.valueClass,
                 valueLabelClass = opts.valueLabelClass,
+                labelX = opts.labelX,
+                labelY = opts.labelY,
                 dialClass = opts.dialClass,
                 piechartClass = opts.piechartClass,
                 piechartColor = opts.color,
@@ -235,8 +239,8 @@
 
             function initializePiechart(elem) {
                 piechartValueElem = svg("text", {
-                    x: 50,
-                    y: 50,
+                    x: labelX,
+                    y: labelY,
                     fill: "#999",
                     "class": valueTextClass,
                     "font-size": "100%",
