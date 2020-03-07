@@ -307,8 +307,8 @@
                     angles[i] = angleRange * ratios[i];
                 }
 
-                console.log(ratios);
-                console.log(angles);
+                // console.log(ratios);
+                // console.log(angles);
 
                 // var val = getValueInPercentage(theValue, min, limit),
                 //     // angle = getAngle(val, 360 - Math.abs(endAngle - startAngle)),
