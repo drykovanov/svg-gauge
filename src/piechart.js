@@ -296,7 +296,7 @@
 
             function updatePiechart(values, frame) {
                 var sum = sumValues(values);
-                console.log('sum = ' + sum);
+                //console.log('sum = ' + sum);
 
                 var angleRange = 360 - Math.abs(startAngle - endAngle);
 
