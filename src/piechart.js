@@ -336,6 +336,8 @@
                 for (var i = 0; i < values.length; i++) {
                     if (values[i] > 0) {
                         var angle = Math.max(angles[i] - aGap, 2.0);
+                        if (angle >= 360)
+                            angle = 359;
                         var flag = angle <= 180 ? 0 : 1;
                         piechartValuePaths[i].setAttribute("d", pathString(radius, a0, angle + a0, flag));
                         a0 += angle + aGap;
