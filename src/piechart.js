@@ -325,7 +325,7 @@
                 //     // this is because we are using arc greater than 180deg
                 //     flag = angle <= 180 ? 0 : 1;
                 if(displayValue) {
-                     piechartValueElem.textContent = label.call(opts, values[0]);
+                     piechartValueElem.innerHTML = label.call(opts, values);
                 }
                 // piechartValuePath.setAttribute("d", pathString(radius, startAngle, angle + startAngle, flag));
 
