@@ -81,6 +81,10 @@
             dialValueGap: 0,
             labelX: 50,
             labelY: 50,
+            iconUrl: null,
+            iconX: 50,
+            iconY: 50,
+            iconWidth: 20,
             value: 0,
             max: 100,
             min: 0,
@@ -208,12 +212,17 @@
                 valueLabelClass = opts.valueLabelClass,
                 labelX = opts.labelX,
                 labelY = opts.labelY,
+                iconUrl = opts.iconUrl,
+                iconX = opts.iconX,
+                iconY = opts.iconY,
+                iconWidth = opts.iconWidth,
                 dialClass = opts.dialClass,
                 piechartClass = opts.piechartClass,
                 piechartColor = opts.color,
                 piechartValueElem,
                 piechartValuePaths, // array
                 piechartValuePathsElem,
+                piechartIconElem,
                 label = opts.label,
                 viewBox = opts.viewBox,
                 instance;
@@ -251,6 +260,18 @@
                     "dominant-baseline": "central"
                 });
 
+                if (iconUrl) {
+                    const iconW2 = iconWidth/2;
+                    piechartIconElem = svg('image', {
+                        "href": iconUrl,
+                        x: iconX,
+                        y: iconY,
+                        transform: "translate(-" + iconW2 + ")"
+                        });
+                } else {
+                    piechartIconElem = svg('g');
+                }
+
                 // piechartValuePath = svg("path", {
                 //     "class": valueDialClass,
                 //     fill: "none",
@@ -284,7 +305,8 @@
                             d: pathString(radius, startAngle, endAngle, flag)
                         }),
                         piechartValueElem,
-                        piechartValuePathsElem
+                        piechartValuePathsElem,
+                        piechartIconElem
                     ]
                 );
                 elem.appendChild(piechartElement);
